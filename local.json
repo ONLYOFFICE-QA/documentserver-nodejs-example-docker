@@ -1,7 +1,7 @@
 {
   "server": {
-    "port": 8080,
-    "siteUrl": "http://external_ip/"
+    "port": 80,
+    "siteUrl": "http://external_ip:8080/"
   }
 }
 
