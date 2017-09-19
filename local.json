@@ -1,7 +1,9 @@
 {
   "server": {
     "port": 80,
-    "siteUrl": "http://external_ip:8080/"
+    "siteUrl": "http://external_ip:8080/",
+    "apiUrl": "web-apps/apps/api/documents/api.js",
+    "preloaderUrl": "web-apps/apps/api/documents/cache-scripts.html"
   }
 }
 
