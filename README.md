@@ -7,7 +7,7 @@ Do not use inside corporate network with NAT.
 
 ```
 BUILD_BRANCH=master && \
-ufw allow www && \
+ufw disable && \
 EXTERNAL_IP=$(curl ipinfo.io/ip) && \
 git clone https://github.com/onlyoffice-testing-robot/documentserver-nodejs-example-docker.git && \
 sed -i -- 's/external_ip/'"$EXTERNAL_IP"'/g' documentserver-nodejs-example-docker/local.json && \
