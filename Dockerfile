@@ -1,4 +1,4 @@
-FROM onlyoffice/documentserver
+FROM onlyoffice/documentserver-ie
 
 MAINTAINER Pavel.Lobashov "shockwavenn@gmail.com"
 ARG build_branch=master
