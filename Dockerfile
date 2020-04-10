@@ -1,13 +1,20 @@
 FROM ubuntu:18.04
 
-MAINTAINER Pavel.Lobashov "shockwavenn@gmail.com"
 ARG build_branch=master
 
 RUN apt-get -y update && \
-    apt-get -y install git npm nodejs
+    apt-get -y --no-install-recommends install ca-certificates\ 
+                                               git \
+                                               npm \
+                                               nodejs \
+                                               wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*                                           
 RUN git clone -b $build_branch https://github.com/ONLYOFFICE/document-server-integration.git
 WORKDIR /document-server-integration/web/documentserver-example/nodejs/
-COPY local.json config/local.json
 RUN npm install
+ENV NODE_CONFIG_DIR="./config"
 
-CMD NODE_CONFIG_DIR='./config' node bin/www
+COPY local.json config/local.json
+
+CMD ["node", "bin/www"]
