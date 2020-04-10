@@ -4,4 +4,5 @@ language: generic
 services:
   - docker
 script:
-  - docker build -t documentserver-nodejs-example .
+  - docker-compose up -d
+  - wget localhost

@@ -2,11 +2,13 @@
 
 Documentserver Nodejs Example Docker
 
-```bash
-BUILD_BRANCH=master && \
-ufw disable && \
-git clone https://github.com/onlyoffice-testing-robot/documentserver-nodejs-example-docker.git && \
-docker build --build-arg build_branch=$BUILD_BRANCH -t documentserver-nodejs-example documentserver-nodejs-example-docker && \
-docker run -itd -p 8008:8008 -p 80:80 -v /opt/onlyoffice/Data:/var/www/onlyoffice/Data documentserver-nodejs-example
+## Setup
 
-```
+1. Replace `${REPLACE_WITH_IP}` in `local.json` with
+   your real ip (external, or local like `http://192.168.3.155`)
+2. `docker-compose build ds-test-example`
+3. `docker-compose up`
+4. Open ip from step 1 in browser
+
+Please make sure not to use `http://localhost` on any steps,
+it may cause `File Download` error and other troubles
