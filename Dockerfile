@@ -1,12 +1,13 @@
-FROM onlyoffice/documentserver-ie
+FROM ubuntu:18.04
 
 MAINTAINER Pavel.Lobashov "shockwavenn@gmail.com"
 ARG build_branch=master
 
 RUN apt-get -y update && \
-    apt-get -y install git
+    apt-get -y install git npm nodejs
 RUN git clone -b $build_branch https://github.com/ONLYOFFICE/document-server-integration.git
-COPY local.json /document-server-integration/web/documentserver-example/nodejs/config/local.json
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT /entrypoint.sh
+WORKDIR /document-server-integration/web/documentserver-example/nodejs/
+COPY local.json config/local.json
+RUN npm install
+
+CMD NODE_CONFIG_DIR='./config' node bin/www

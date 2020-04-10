@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+    documentserver:
+        image: onlyoffice/documentserver
+        volumes:
+            - /opt/onlyoffice/Data:/var/www/onlyoffice/Data
+        ports:
+            - "8008:80"
+    ds-test-example:
+        build: .
+        ports:
+            - "80:80"

@@ -1,7 +1,7 @@
 {
   "server": {
     "port": 80,
-    "siteUrl": "http://localhost:8008/",
+    "siteUrl": "http://${REPLACE_WITH_IP}:8008/",
     "apiUrl": "web-apps/apps/api/documents/api.js",
     "preloaderUrl": "web-apps/apps/api/documents/cache-scripts.html"
   }
