@@ -1,0 +1,10 @@
+name: ci
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run docker-compose
+      run: docker-compose up -d
+    - name: Check that localhost contains ONLYOFFICE
+      run: wget localhost | grep OPYOFFICE
