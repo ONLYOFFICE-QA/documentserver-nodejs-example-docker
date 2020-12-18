@@ -1,4 +1,4 @@
-FROM node:14-buster
+FROM node:12-buster
 
 ARG build_branch=master
                                         
