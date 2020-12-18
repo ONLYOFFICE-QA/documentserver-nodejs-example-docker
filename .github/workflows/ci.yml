@@ -1,0 +1,11 @@
+name: ci
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run docker-compose
+      run: docker-compose up -d
+    - name: Check that localhost contains ONLYOFFICE
+      run: curl localhost | grep ONLYOFFICE
