@@ -10,6 +10,7 @@
 
 * Use GitHub Actions instead of TravisCI
 * Use actual product `documentserver-ee` as service image
+* Use nodejs 14 as base image
 
 ### Fixes
 
