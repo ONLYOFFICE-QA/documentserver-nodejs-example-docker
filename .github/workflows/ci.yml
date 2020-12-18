@@ -8,4 +8,4 @@ jobs:
     - name: Run docker-compose
       run: docker-compose up -d
     - name: Check that localhost contains ONLYOFFICE
-      run: wget localhost | grep OPYOFFICE
+      run: curl localhost | grep OPYOFFICE
