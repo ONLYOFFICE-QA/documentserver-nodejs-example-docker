@@ -9,3 +9,4 @@
 ### Changes
 
 * Use GitHub Actions instead of TravisCI
+* Use actual product `documentserver-ee` as service image
