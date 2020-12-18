@@ -1,6 +1,10 @@
-# # Change log
+# Change log
 
 ## master (unreleased)
+
+### New Features
+
+* Use `markdownlint` in CI
 
 ### Changes
 
