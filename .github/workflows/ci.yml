@@ -13,4 +13,6 @@ jobs:
     - name: Run docker-compose
       run: docker-compose up -d
     - name: Check that localhost contains ONLYOFFICE
-      run: curl localhost | grep ONLYOFFICE
+      run: |
+        sleep 10
+        curl localhost | grep ONLYOFFICE
