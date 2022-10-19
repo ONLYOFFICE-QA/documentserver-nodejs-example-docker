@@ -6,7 +6,11 @@ services:
             - /opt/onlyoffice/Data:/var/www/onlyoffice/Data
         ports:
             - "8008:80"
+        environment:
+            - JWT_ENABLED=false    
     ds-test-example:
         build: .
         ports:
             - "80:80"
+        volumes:
+            - ./local.json:/document-server-integration/web/documentserver-example/nodejs/config/local.json
