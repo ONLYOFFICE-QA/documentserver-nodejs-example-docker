@@ -7,7 +7,8 @@ services:
         ports:
             - "8008:80"
         environment:
-            - JWT_ENABLED=false    
+            - JWT_ENABLED=false
+            - ALLOW_PRIVATE_IP_ADDRESS=true
     ds-test-example:
         build: .
         ports:
