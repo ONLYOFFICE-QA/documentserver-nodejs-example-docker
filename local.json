@@ -3,7 +3,7 @@
     "//next item is port of site, not DocumentServer": "comment",
     "port": 80,
     "//next item is full url of DocumentServer, nothing related to site": "comment",
-    "siteUrl": "http://172.17.0.1:8008/",
+    "siteUrl": "http://${REPLACE_WITH_IP}:8008/",
     "apiUrl": "web-apps/apps/api/documents/api.js",
     "preloaderUrl": "web-apps/apps/api/documents/cache-scripts.html"
   }
