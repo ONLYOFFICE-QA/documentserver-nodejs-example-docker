@@ -1,4 +1,3 @@
-version: "3.7"
 services:
     documentserver:
         image: onlyoffice/documentserver-ee
@@ -9,9 +8,7 @@ services:
         environment:
             - JWT_ENABLED=false
             - ALLOW_PRIVATE_IP_ADDRESS=true
-    ds-test-example:
+    example:
         build: .
         ports:
             - "80:80"
-        volumes:
-            - ./local.json:/document-server-integration/web/documentserver-example/nodejs/config/local.json
