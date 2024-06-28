@@ -1,4 +1,3 @@
-version: "3.7"
 services:
     documentserver:
         image: onlyoffice/documentserver-ee
@@ -13,5 +12,3 @@ services:
         build: .
         ports:
             - "80:80"
-        volumes:
-            - ./local.json:/document-server-integration/web/documentserver-example/nodejs/config/local.json
