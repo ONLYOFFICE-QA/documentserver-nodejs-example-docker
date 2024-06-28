@@ -5,7 +5,7 @@ ENV DOCS_PORT='8008'
 
 ENV PORT=80
 
-ARG BUILD_BRANCH=release/v1.9.0
+ARG BUILD_BRANCH=master
 
 RUN git clone --depth=1 --recursive --shallow-submodules -b $BUILD_BRANCH https://github.com/ONLYOFFICE/document-server-integration.git
 WORKDIR /document-server-integration/web/documentserver-example/nodejs/
