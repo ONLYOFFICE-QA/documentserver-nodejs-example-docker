@@ -10,7 +10,7 @@ jobs:
         npm install -g markdownlint-cli
         markdownlint *.md
     - name: Run docker-compose
-      run: docker-compose up -d
+      run: docker compose up -d
     - name: Check that localhost contains ONLYOFFICE
       run: |
         sleep 10
