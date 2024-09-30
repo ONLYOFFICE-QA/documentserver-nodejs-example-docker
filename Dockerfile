@@ -11,6 +11,8 @@ RUN git clone --depth=1 --recursive --shallow-submodules -b $BUILD_BRANCH https:
 WORKDIR /document-server-integration/web/documentserver-example/nodejs/
 
 RUN sed -i "s/\"enableForgotten\"\: false\,/\"enableForgotten\"\: true\,/" config/default.json
+RUN sed -i "s/1073741824/107374182400/g" config/default.json
+RUN sed -i "s/104857600/10485760000/g" config/production-linux.json
 
 RUN sed -i "s/documentserver/$DOCSERVER_NETWORK_NAME:$DOCS_PORT/" config/default.json
 RUN sed -i "s/\"port\".*,/\"port\"\: ${PORT},/" config/default.json
