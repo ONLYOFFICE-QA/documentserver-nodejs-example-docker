@@ -1,4 +1,4 @@
-FROM node:20.16-bullseye
+FROM node:22.13.1-bullseye
 
 ENV DOCSERVER_NETWORK_NAME=''
 ENV DOCS_PORT='8008'
@@ -6,8 +6,13 @@ ENV PORT=80
 
 ARG BUILD_BRANCH=master
 
-RUN git clone --depth=1 --recursive --shallow-submodules -b $BUILD_BRANCH https://github.com/ONLYOFFICE/document-server-integration.git
+RUN git clone --no-recurse-submodules -b $BUILD_BRANCH https://github.com/ONLYOFFICE/document-server-integration.git
+
 WORKDIR /document-server-integration/web/documentserver-example/nodejs/
+
+ # Initialize and update only the specific submodules
+RUN git submodule update --init public/assets/document-templates; \
+    git submodule update --init public/assets/document-formats
 
 RUN apt-get update && apt-get install -y jq moreutils
 
