@@ -6,8 +6,13 @@ ENV PORT=80
 
 ARG BUILD_BRANCH=master
 
-RUN git clone --depth=1 --recursive --shallow-submodules -b $BUILD_BRANCH https://github.com/ONLYOFFICE/document-server-integration.git
+RUN git clone --no-recurse-submodules -b $BUILD_BRANCH https://github.com/ONLYOFFICE/document-server-integration.git
+
 WORKDIR /document-server-integration/web/documentserver-example/nodejs/
+
+ # Initialize and update only the specific submodules
+RUN git submodule update --init public/assets/document-templates; \
+    git submodule update --init public/assets/document-formats
 
 RUN apt-get update && apt-get install -y jq moreutils
 
