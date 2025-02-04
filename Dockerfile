@@ -1,4 +1,4 @@
-FROM node:20.16-bullseye
+FROM node:22.13.1-bullseye
 
 ENV DOCSERVER_NETWORK_NAME=''
 ENV DOCS_PORT='8008'
