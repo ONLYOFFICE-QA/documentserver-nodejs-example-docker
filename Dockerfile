@@ -1,12 +1,12 @@
 FROM node:22.13.1-bullseye
 
-ENV DOCSERVER_NETWORK_NAME=''
-ENV DOCS_PORT='8008'
+ENV DOCSERVER_NETWORK_NAME='192.168.4.142'
+ENV DOCS_PORT='3000'
 ENV PORT=80
 
 ARG BUILD_BRANCH=master
 
-RUN git clone --no-recurse-submodules -b $BUILD_BRANCH https://github.com/ONLYOFFICE/document-server-integration.git
+RUN git clone --no-recurse-submodules --depth=1 -b $BUILD_BRANCH https://github.com/ONLYOFFICE/document-server-integration.git
 
 WORKDIR /document-server-integration/web/documentserver-example/nodejs/
 
